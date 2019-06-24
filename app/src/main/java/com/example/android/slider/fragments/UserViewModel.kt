@@ -1,4 +1,4 @@
-package com.example.android.slider
+package com.example.android.slider.fragments
 
 
 import android.arch.lifecycle.MutableLiveData

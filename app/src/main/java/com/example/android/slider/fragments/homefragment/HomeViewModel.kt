@@ -1,4 +1,4 @@
-package com.example.android.slider
+package com.example.android.slider.fragments.homefragment
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
@@ -14,6 +14,7 @@ class HomeViewModel:ViewModel() {
         val handler = Handler()
         val update = Runnable() {
             viewPager?.postValue(0)
+
 
         }
 
