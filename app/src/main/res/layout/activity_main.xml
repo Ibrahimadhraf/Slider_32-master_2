@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:bind="http://schemas.android.com/apk/res-auto"         >
+        xmlns:bind="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="mainActivity" type="com.example.android.slider.MainActivity"/>
+        <import type="java.util.List"/>
+        <variable name="settingusecase"
+                  type="List&lt;com.example.android.slider.datalayer.usecases.SettingsUseCase &gt;"  />
     </data>
 <android.support.constraint.ConstraintLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -14,7 +16,7 @@
     <include
             android:id="@+id/app_bar"
             layout="@layout/app_bar"
-            bind:secondaryUser="@{mainActivity}"
+            bind:headersetting="@{settingusecase.get(0)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />

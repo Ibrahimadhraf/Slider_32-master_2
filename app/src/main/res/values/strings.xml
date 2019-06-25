@@ -12,8 +12,12 @@
     <!--offers icon in nav bar-->
     <string name="more_icon">المزيد </string>
     <!--main textView-->
-    <string name="main_text">أشهر المنتجات</string>
+    <string name="main_texta">أشهر المنتجات</string>
     <string name="currency">ر.ع</string>
     <!--search key -->
     <string name="search_key">إبحث بالمنتجات </string>
+    <string name="main_textb">إختر حسب القسم </string>
+    <string name="main_textb2">تصفح الأفضل تقييماً </string>
+    <string name="main_textb3">تصفح حسب الفئة </string>
+
 </resources>

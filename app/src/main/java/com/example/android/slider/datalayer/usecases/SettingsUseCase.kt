@@ -1,12 +1,14 @@
 package com.example.android.slider.datalayer.usecases
 
+import android.databinding.Bindable
+import android.graphics.Color
 import com.example.android.slider.models.settings.SettingsModelData
 import java.io.Serializable
 
 data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  {
-
+    // var color:Int?=null
     var settingData: SettingsModelData?=null
-    var background: String? = null
+    var background: String? = "#fff"
     var red: String? = null
     var green: String? = null
     var blue: String? = null
@@ -102,7 +104,7 @@ if(settings?.type=="footer"){
             green=settingData!!.data.green
             blue=settingData!!.data.blue
         }else{}
+      // color= background?.toInt()
     }
-
 
 }

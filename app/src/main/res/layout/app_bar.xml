@@ -4,8 +4,8 @@
         xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-                name="secondaryUser"
-                type="com.example.android.slider.MainActivity"/>
+                name="headersetting"
+                type="com.example.android.slider.datalayer.usecases.SettingsUseCase"/>
     </data>
 <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -17,10 +17,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:backgroundColor = "@{headersetting.background}"
             android:paddingStart="10dp"
             android:paddingEnd="10dp">
-
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -32,7 +31,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:imageResource="@{secondaryUser.logo}"/>
+                    app:imageResource="@{headersetting.logo}"/>
 
             <android.support.constraint.ConstraintLayout
                     android:layout_width="0dp"

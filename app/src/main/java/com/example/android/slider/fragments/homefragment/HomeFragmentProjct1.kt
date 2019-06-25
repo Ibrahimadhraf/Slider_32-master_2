@@ -12,30 +12,30 @@ import com.example.android.slider.R
 import com.example.android.slider.adapter.FamousProductAdapter
 import com.example.android.slider.adapter.ProductViewAdapter
 import com.example.android.slider.adapter.ViewPagerAdapter
-import kotlinx.android.synthetic.main.homefragment.*
-import kotlinx.android.synthetic.main.homefragment.view.*
+import kotlinx.android.synthetic.main.homefragmentproject1.*
+import kotlinx.android.synthetic.main.homefragmentproject1.view.*
 
 
-class HomeFragment:Fragment(){
+class HomeFragmentProjct1:Fragment(){
     var currentPage: Int = 0
     var NUM_PAGES: Int = 3
-    lateinit var viewModel: HomeViewModel
+    lateinit var project1ViewModel: HomeProject1ViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View=inflater.inflate(R.layout.homefragment,container,false)
+        val view:View=inflater.inflate(R.layout.homefragmentproject1,container,false)
         view.viewpager?.adapter= ViewPagerAdapter()
-        viewModel= ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        project1ViewModel= ViewModelProviders.of(this).get(HomeProject1ViewModel::class.java)
        // val url:String="http://imakeapp.codesroots.com/assets/images/logo.png"
        // Picasso.get().load(url).into(imageView5)
-        viewModel.swipeViewPager()
-        viewModel.viewPager?.observe(this , android.arch.lifecycle.Observer{
+        project1ViewModel.swipeViewPager()
+        project1ViewModel.viewPager?.observe(this , android.arch.lifecycle.Observer{
             if (currentPage == NUM_PAGES) {
                 currentPage = 0
             }
             viewpager.setCurrentItem(currentPage++, true)
             imageView5.setBlur(5)
         })
-      view.recyclerView?.adapter= ProductViewAdapter()
-       view.recyclerView?.setLayoutManager(LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,true))
+      view.chdepatment1?.adapter= ProductViewAdapter()
+       view.chdepatment1?.setLayoutManager(LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,true))
          view.product_recyclerView?.adapter= FamousProductAdapter()
         view.product_recyclerView.setLayoutManager(GridLayoutManager(getContext(),2))
         return view

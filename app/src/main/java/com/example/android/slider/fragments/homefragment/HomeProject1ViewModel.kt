@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModel
 import android.os.Handler
 import java.util.*
 
-class HomeViewModel:ViewModel() {
+class HomeProject1ViewModel:ViewModel() {
     var viewPager: MutableLiveData<Int>?=null
     init {
         viewPager=MutableLiveData()
