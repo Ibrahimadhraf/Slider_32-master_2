@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
-                                             android:layout_margin="3dp"
+                                             android:layout_margin="6dp"
                                              android:background="@drawable/productviewbackgrounf"
                                              android:layout_width="wrap_content"
                                              android:layout_height="wrap_content">
@@ -11,8 +11,8 @@
                                                   app:layout_constraintEnd_toEndOf="parent"
                                                   android:src="@drawable/photo"
                                                   app:layout_constraintStart_toStartOf="parent"
-                                                  android:id="@+id/circleImageView3" android:layout_marginTop="8dp"
-                                                  android:layout_marginEnd="8dp" android:layout_marginStart="8dp"/>
+                                                  android:id="@+id/circleImageView3" android:layout_marginTop="16dp"
+                                                  android:layout_marginEnd="16dp" android:layout_marginStart="16dp"/>
     <TextView
             android:text="TextView"
             android:layout_width="wrap_content"

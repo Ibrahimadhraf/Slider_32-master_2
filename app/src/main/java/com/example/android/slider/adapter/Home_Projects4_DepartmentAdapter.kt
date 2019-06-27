@@ -14,7 +14,7 @@ class Home_Projects4_DepartmentAdapter:RecyclerView.Adapter<Home_Projects4_Depar
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return 4
     }
 
     override fun onBindViewHolder(p0: Home_Projects4_DepatmentHolder, p1: Int) {
