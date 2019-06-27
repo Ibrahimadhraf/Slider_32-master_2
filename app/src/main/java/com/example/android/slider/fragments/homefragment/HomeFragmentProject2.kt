@@ -23,7 +23,7 @@ class HomeFragmentProject2 :Fragment(){
     var NUM_PAGES: Int = 3
     lateinit var project2ViewModel: HomeProject2ViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View=inflater.inflate(com.example.android.slider.R.layout.homefragmentproject2,container,false)
+        val view:View=inflater.inflate(R.layout.homefragmentproject2,container,false)
         view.viewPager?.adapter= ViewPagerAdapter()
         view.indicator.setViewPager(viewPager)
         project2ViewModel= ViewModelProviders.of(this).get(HomeProject2ViewModel::class.java)
