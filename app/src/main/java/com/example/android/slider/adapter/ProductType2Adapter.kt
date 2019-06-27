@@ -11,13 +11,13 @@ class ProductType2Adapter:RecyclerView.Adapter<ProductType2Adapter.ProductType2V
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ProductType2ViewHolder {
 
         val layoutInflater= LayoutInflater.from(parent.context)
-        val view=layoutInflater.inflate(R.layout.typelayout_product_1,parent,false)
+        val view=layoutInflater.inflate(R.layout.typeproductlayout_2,parent,false)
         return ProductType2Adapter.ProductType2ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-       return 5
-    }
+
+return 5   }
 
     override fun onBindViewHolder(p0: ProductType2ViewHolder, p1: Int) {
 

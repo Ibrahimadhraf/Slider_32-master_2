@@ -9,7 +9,7 @@ import com.example.android.slider.R
 class BestSellerAdapter:RecyclerView.Adapter<BestSellerAdapter.BestRateViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): BestRateViewHolder {
         val layoutInflater= LayoutInflater.from(parent.context)
-        val view=layoutInflater.inflate(R.layout.choosedep_1_layout,parent,false)
+        val view=layoutInflater.inflate(R.layout.bestrate_products,parent,false)
         return BestRateViewHolder(view)
     }
 

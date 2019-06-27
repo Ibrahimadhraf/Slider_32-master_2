@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity(),Serializable {
 
         val intent: Intent? = getIntent()
        settings_data = intent?.getSerializableExtra(SplashUi.SETTINGUSECASEkEY) as List<SettingsUseCase>
+        print(settings_data)
         binding.settingusecase = settings_data
         binding.executePendingBindings()
 

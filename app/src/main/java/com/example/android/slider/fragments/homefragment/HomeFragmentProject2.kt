@@ -15,12 +15,15 @@ import kotlinx.android.synthetic.main.homefragmentproject1.view.*
 import kotlinx.android.synthetic.main.homefragmentproject2.*
 import kotlinx.android.synthetic.main.homefragmentproject2.view.*
 
+
+
+
 class HomeFragmentProject2 :Fragment(){
     var currentPage: Int = 0
     var NUM_PAGES: Int = 3
     lateinit var project2ViewModel: HomeProject2ViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View=inflater.inflate(R.layout.homefragmentproject1,container,false)
+        val view:View=inflater.inflate(com.example.android.slider.R.layout.homefragmentproject2,container,false)
         view.viewPager?.adapter= ViewPagerAdapter()
         view.indicator.setViewPager(viewPager)
         project2ViewModel= ViewModelProviders.of(this).get(HomeProject2ViewModel::class.java)
@@ -29,17 +32,17 @@ class HomeFragmentProject2 :Fragment(){
             if (currentPage == NUM_PAGES) {
                 currentPage = 0
             }
-            viewpager.setCurrentItem(currentPage++, true)
+
+            view.viewPager.setCurrentItem(currentPage++, true)
         })
         view.ch_pro_1.adapter=ChooseDepartment1Adapter()
-        view.ch_pro_1.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
-        view.ch_pro_2.adapter=ChooseDepartment2Adapter()
-        view.ch_pro_2.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
+        view.ch_pro_1.setLayoutManager(GridLayoutManager(getContext(),2))
          view.best_rate.adapter=BestSellerAdapter()
-        view.best_rate.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL,true))
+        view.best_rate.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
         view.pro_type_1.adapter=ProductType1Adapter()
-        view.pro_type_1.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
-        view.pro_type_2.setLayoutManager(GridLayoutManager(getContext(),2))
+        view.pro_type_1.setLayoutManager(GridLayoutManager(getContext(),3))
+
+
         return view
     }
 }

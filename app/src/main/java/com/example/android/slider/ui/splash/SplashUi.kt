@@ -67,10 +67,10 @@ companion object{
         settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
             settingUseCse= it!!.get(0)
           settigs_data=it
-           val bundle=Bundle()
+           //val bundle=Bundle()
             val data_Intent = Intent(this, MainActivity::class.java)
            data_Intent.putExtra(SETTINGUSECASEkEY, settigs_data as Serializable)
-            data_Intent.putExtras(bundle)
+           // data_Intent.putExtras(bundle)
             startActivity(data_Intent)
             finish()
             mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
