@@ -1,5 +1,9 @@
 package com.example.android.slider.fragments.homefragment
 
+import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
+import android.content.Intent
+import android.content.Intent.getIntent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
@@ -12,19 +16,29 @@ import com.example.android.slider.adapter.Home4BestOffecersAdapter
 import com.example.android.slider.adapter.HomeFragment4bestRateAdapter
 import com.example.android.slider.adapter.Home_Projects4_DepartmentAdapter
 import com.example.android.slider.adapter.ViewPagerAdapter
+import com.example.android.slider.datalayer.usecases.SettingsUseCase
+import com.example.android.slider.ui.settingviewmodel.SettingViewModel
+import com.example.android.slider.ui.splash.SplashUi
 import kotlinx.android.synthetic.main.homefragmentlproject4.*
 import kotlinx.android.synthetic.main.homefragmentlproject4.view.*
 import kotlinx.android.synthetic.main.homefragmentproject3.view.*
 import java.util.*
 
 class HomeFragmentProjcet4 :Fragment(){
+    var settings_data: List<SettingsUseCase>? = null
     var currentPage:Int=0
     var  NUM_PAGES:Int=5
+    lateinit var settingsViewModel: SettingViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view:View=inflater.inflate(R.layout.homefragmentlproject4,container,false)
-      view.viewpager2.adapter=ViewPagerAdapter()
-        view.indicator2.setViewPager(view.viewpager2)
-        swipeViewPager()
+        settingsViewModel= ViewModelProviders.of(this).get(SettingViewModel::class.java)
+        settingsViewModel.getSettings()
+        settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
+            view.viewpager2.adapter=ViewPagerAdapter(it)
+            view.indicator2.setViewPager(view.viewpager2)
+            swipeViewPager()
+        })
+
         view.recyclerView2.adapter=Home_Projects4_DepartmentAdapter()
         view.recyclerView2.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
         view.recyclerView3.adapter=HomeFragment4bestRateAdapter()

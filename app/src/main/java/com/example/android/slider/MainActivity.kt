@@ -22,6 +22,7 @@ import java.io.Serializable
 class MainActivity : AppCompatActivity(),Serializable {
 
     var settings_data: List<SettingsUseCase>? = null
+    val SETTINGUSECASEkEY:String = "Settings"
     var logo:String?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,4 +55,6 @@ class MainActivity : AppCompatActivity(),Serializable {
             ).commit()
             true
         }
+
+
 }

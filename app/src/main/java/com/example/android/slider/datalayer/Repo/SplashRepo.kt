@@ -32,21 +32,6 @@ class SplashRepo {
 
     }
 
-   fun getSliderShow(livedata: MutableLiveData<List<SliderShowUseCase>>?,errormessage: MutableLiveData<String>?){
-       APIServices.create().getSliderShowSata()
-           .subscribeOn(Schedulers.io())
-           .observeOn(AndroidSchedulers.mainThread())
-           .map { data-> data.data.map { data->SliderShowUseCase(data) }}
-           .subscribe(
-               {
-                   data->
-                   livedata?.postValue(data)
-               },
-               {
-                   error->postError(Throwable(),errormessage)
-               }
-           )
-   }
 
                 fun postError(throwable: Throwable, errormessage: MutableLiveData<String>?) {
                     errormessage?.postValue(throwable.toString())

@@ -18,8 +18,10 @@ data class SettingData (
     val green: String? = null,
     val blue: String? = null,
     val logo: String? = null,
-    val rightIcon: String? = null,
+    val right_icon: String? = null,
     val leftIcon: String? = null,
+    val templateID: String? = null,
+    val templatehtml: String? = null,
     val border: String? = null,
     val shadow: String? = null,
     val firstIcon: String? = null,
@@ -37,5 +39,6 @@ data class SettingData (
     val title: String? = null,
     val fontcolor: String? = null,
     val fontfamily: String? = null,
+   val slideTemplete:Int=2,
     val slideshow: String? = null
 ):Serializable

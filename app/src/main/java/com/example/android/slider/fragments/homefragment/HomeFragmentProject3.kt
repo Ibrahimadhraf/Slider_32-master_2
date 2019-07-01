@@ -21,7 +21,7 @@ class HomeFragmentProject3 :Fragment(){
     var  NUM_PAGES:Int=5
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view:View=inflater.inflate(R.layout.homefragmentproject3,container,false)
-        view.viewpager.adapter=ViewPagerAdapter()
+      //  view.viewpager.adapter=ViewPagerAdapter()
 
         view.indicator.setViewPager(view.viewpager)
         swipeViewPager()

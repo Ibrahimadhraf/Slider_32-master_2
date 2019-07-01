@@ -10,6 +10,7 @@ data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  
     var settingData: SettingsModelData?=null
     var background: String? = "#fff"
     var red: String? = null
+   var slideTemp:Int?=null
     var green: String? = null
     var blue: String? = null
     var logo: String? = null
@@ -38,13 +39,14 @@ data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  
     init {
 
 settingData = settings
- if(settings?.type=="header"){
+ slideTemp=settingData?.data?.slideTemplete
+ if(settings?.type =="header"){
     background=settingData!!.data.background
     red=settingData!!.data.red
      green=settingData!!.data.green
      blue=settingData!!.data.blue
      logo=settingData!!.data.logo
-     rightIcon=settingData!!.data.rightIcon
+     rightIcon=settingData!!.data.right_icon
      leftIcon=settingData!!.data.leftIcon
 
 
@@ -57,14 +59,14 @@ if(settings?.type=="footer"){
     green=settingData!!.data.green
     blue=settingData!!.data.blue
     firstIcon=settingData!!.data.firstIcon
-    firstLabel=settingData!!.data.firstLabel
+    firstLabel=settingData!!.data.secondIcon
     secondIcon=settingData!!.data.secondIcon
     secondLabel=settingData!!.data.secondLabel
     thirdIcon=settingData!!.data.thirdIcon
     thirdLabel=settingData!!.data.thirdLabel
     forthIcon=settingData!!.data.forthIcon
     forthLabel=settingData!!.data.forthLabel
-    fontColor=settingData!!.data.fontColor
+    fontColor=settingData!!.data.fontcolor
     fontRed=settingData!!.data.fontRed
     fontGreen=settingData!!.data.fontGreen
     fontBlue=settingData!!.data.fontBlue
@@ -78,7 +80,7 @@ if(settings?.type=="footer"){
             red=settingData!!.data.red
             green=settingData!!.data.green
             blue=settingData!!.data.blue
-            fontColor=settingData!!.data.fontColor
+            fontColor=settingData!!.data.fontcolor
             fontRed=settingData!!.data.fontRed
             fontGreen=settingData!!.data.fontGreen
             fontBlue=settingData!!.data.fontBlue
@@ -92,7 +94,7 @@ if(settings?.type=="footer"){
             red=settingData!!.data.red
             green=settingData!!.data.green
             blue=settingData!!.data.blue
-            fontColor=settingData!!.data.fontColor
+            fontColor=settingData!!.data.fontcolor
             fontRed=settingData!!.data.fontRed
             fontGreen=settingData!!.data.fontGreen
             fontBlue=settingData!!.data.fontBlue

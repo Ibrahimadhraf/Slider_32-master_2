@@ -24,7 +24,7 @@ class HomeFragmentProject2 :Fragment(){
     lateinit var project2ViewModel: HomeProject2ViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view:View=inflater.inflate(R.layout.homefragmentproject2,container,false)
-        view.viewPager?.adapter= ViewPagerAdapter()
+      //  view.viewPager?.adapter= ViewPagerAdapter()
         view.indicator.setViewPager(viewPager)
         project2ViewModel= ViewModelProviders.of(this).get(HomeProject2ViewModel::class.java)
         project2ViewModel.swipeViewPager()

@@ -22,7 +22,7 @@ class HomeFragmentProjct1:Fragment(){
     lateinit var project1ViewModel: HomeProject1ViewModel
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view:View=inflater.inflate(R.layout.homefragmentproject1,container,false)
-        view.viewpager?.adapter= ViewPagerAdapter()
+      //  view.viewpager?.adapter= ViewPagerAdapter()
         project1ViewModel= ViewModelProviders.of(this).get(HomeProject1ViewModel::class.java)
        // val url:String="http://imakeapp.codesroots.com/assets/images/logo.png"
        // Picasso.get().load(url).into(imageView5)
