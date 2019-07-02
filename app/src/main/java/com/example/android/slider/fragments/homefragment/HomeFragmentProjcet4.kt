@@ -1,12 +1,10 @@
 package com.example.android.slider.fragments.homefragment
 
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
-import android.content.Intent
-import android.content.Intent.getIntent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -18,10 +16,7 @@ import com.example.android.slider.adapter.Home_Projects4_DepartmentAdapter
 import com.example.android.slider.adapter.ViewPagerAdapter
 import com.example.android.slider.datalayer.usecases.SettingsUseCase
 import com.example.android.slider.ui.settingviewmodel.SettingViewModel
-import com.example.android.slider.ui.splash.SplashUi
-import kotlinx.android.synthetic.main.homefragmentlproject4.*
 import kotlinx.android.synthetic.main.homefragmentlproject4.view.*
-import kotlinx.android.synthetic.main.homefragmentproject3.view.*
 import java.util.*
 
 class HomeFragmentProjcet4 :Fragment(){
@@ -34,13 +29,44 @@ class HomeFragmentProjcet4 :Fragment(){
         settingsViewModel= ViewModelProviders.of(this).get(SettingViewModel::class.java)
         settingsViewModel.getSettings()
         settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
-            view.viewpager2.adapter=ViewPagerAdapter(it)
-            view.indicator2.setViewPager(view.viewpager2)
+            view.viewpager_4.adapter=ViewPagerAdapter(it)
+            view.indicator2.setViewPager(view.viewpager_4)
             swipeViewPager()
+             view.departmentrecycle.adapter=Home_Projects4_DepartmentAdapter(it)
+            if(it!!.get(2).recyclerTemp== 1 ) {
+                view.departmentrecycle.setLayoutManager(
+                    LinearLayoutManager(
+                        getContext(),
+                        LinearLayoutManager.HORIZONTAL,
+                        true
+                    )
+                )
+            }
+            if(it.get(2).recyclerTemp== 2 ) {
+                view.departmentrecycle.setLayoutManager(
+                    LinearLayoutManager(
+                        getContext(),
+                        LinearLayoutManager.HORIZONTAL,
+                        true
+                    )
+                )
+            }
+            if(it.get(2).recyclerTemp== 3) {
+                view.departmentrecycle.setLayoutManager(
+
+                        GridLayoutManager(getContext(),
+                            3)
+                )
+            }
+            if(it.get(2).recyclerTemp== 4) {
+                view.departmentrecycle.setLayoutManager(
+
+                    GridLayoutManager(getContext(),
+                        2)
+                )
+            }
         })
 
-        view.recyclerView2.adapter=Home_Projects4_DepartmentAdapter()
-        view.recyclerView2.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
         view.recyclerView3.adapter=HomeFragment4bestRateAdapter()
         view.recyclerView3.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
         view.offers_recycle.adapter=Home4BestOffecersAdapter()
@@ -53,7 +79,7 @@ class HomeFragmentProjcet4 :Fragment(){
             if (currentPage == NUM_PAGES){
                 currentPage=0
             }
-            view!!.viewpager2.setCurrentItem(currentPage++,true)
+            view?.viewpager_4?.setCurrentItem(currentPage++)
         }
         val swipTimer= Timer()
         swipTimer.schedule( object : TimerTask(){

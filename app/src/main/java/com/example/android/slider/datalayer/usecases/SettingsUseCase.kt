@@ -11,6 +11,7 @@ data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  
     var background: String? = "#fff"
     var red: String? = null
    var slideTemp:Int?=null
+    var recyclerTemp:Int?=null
     var green: String? = null
     var blue: String? = null
     var logo: String? = null
@@ -40,6 +41,7 @@ data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  
 
 settingData = settings
  slideTemp=settingData?.data?.slideTemplete
+recyclerTemp=settingData?.data?.recyclerTemp
  if(settings?.type =="header"){
     background=settingData!!.data.background
     red=settingData!!.data.red

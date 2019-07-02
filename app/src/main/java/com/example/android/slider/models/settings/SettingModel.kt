@@ -40,5 +40,6 @@ data class SettingData (
     val fontcolor: String? = null,
     val fontfamily: String? = null,
    val slideTemplete:Int=2,
+    val recyclerTemp:Int=4,
     val slideshow: String? = null
 ):Serializable

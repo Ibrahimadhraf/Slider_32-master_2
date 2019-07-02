@@ -45,8 +45,9 @@ class MainActivity : AppCompatActivity(),Serializable {
             when (menuItem.itemId) {
                 R.id.nav_home -> selectFragment = HomeFragmentProjcet4()
                 R.id.nav_buy -> selectFragment = BuyFragment()
-                R.id.nav_more -> selectFragment = MoreFragment()
                 R.id.nav_offers->selectFragment= OffersFragment()
+                R.id.nav_more -> selectFragment = MoreFragment()
+
             }
             assert(selectFragment != null)
             supportFragmentManager.beginTransaction().replace(

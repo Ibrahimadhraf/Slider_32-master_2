@@ -12,6 +12,7 @@
                 android:id="@+id/image_slider"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/productviewbackgrounf"
                 android:scaleType="fitXY"
                 app:imageResource="@{`http://imakeapp.codesroots.com/assets/images/logo.png`}"
                 app:layout_constraintTop_toTopOf="parent"
