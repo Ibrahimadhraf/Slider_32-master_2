@@ -10,30 +10,31 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.android.slider.R
-import com.example.android.slider.adapter.Home4BestOffecersAdapter
-import com.example.android.slider.adapter.HomeFragment4bestRateAdapter
-import com.example.android.slider.adapter.Home_Projects4_DepartmentAdapter
-import com.example.android.slider.adapter.ViewPagerAdapter
+import com.example.android.slider.adapter.*
 import com.example.android.slider.datalayer.usecases.SettingsUseCase
 import com.example.android.slider.ui.settingviewmodel.SettingViewModel
 import kotlinx.android.synthetic.main.homefragmentlproject4.view.*
 import java.util.*
 
+
+
+
 class HomeFragmentProjcet4 :Fragment(){
-    var settings_data: List<SettingsUseCase>? = null
     var currentPage:Int=0
     var  NUM_PAGES:Int=5
     lateinit var settingsViewModel: SettingViewModel
+    lateinit var mAdapter: FamousProductAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View=inflater.inflate(R.layout.homefragmentlproject4,container,false)
+        val view:View=inflater.inflate(com.example.android.slider.R.layout.homefragmentlproject4,container,false)
         settingsViewModel= ViewModelProviders.of(this).get(SettingViewModel::class.java)
         settingsViewModel.getSettings()
         settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
+            mAdapter=FamousProductAdapter(it)
             view.viewpager_4.adapter=ViewPagerAdapter(it)
             view.indicator2.setViewPager(view.viewpager_4)
             swipeViewPager()
              view.departmentrecycle.adapter=Home_Projects4_DepartmentAdapter(it)
-            if(it!!.get(2).recyclerTemp== 1 ) {
+            if(it!!.get(3).departmentTemp== 1 ) {
                 view.departmentrecycle.setLayoutManager(
                     LinearLayoutManager(
                         getContext(),
@@ -42,7 +43,7 @@ class HomeFragmentProjcet4 :Fragment(){
                     )
                 )
             }
-            if(it.get(2).recyclerTemp== 2 ) {
+            if(it.get(3).departmentTemp== 2 ) {
                 view.departmentrecycle.setLayoutManager(
                     LinearLayoutManager(
                         getContext(),
@@ -51,26 +52,54 @@ class HomeFragmentProjcet4 :Fragment(){
                     )
                 )
             }
-            if(it.get(2).recyclerTemp== 3) {
+            if(it.get(3).departmentTemp== 3) {
                 view.departmentrecycle.setLayoutManager(
 
-                        GridLayoutManager(getContext(),
-                            3)
+                        GridLayoutManager(getContext(), 3)
                 )
             }
-            if(it.get(2).recyclerTemp== 4) {
+            if(it.get(3).departmentTemp== 4) {
                 view.departmentrecycle.setLayoutManager(
 
                     GridLayoutManager(getContext(),
                         2)
                 )
+
             }
+            view.recyclerView3.adapter=HomeFragment4bestRateAdapter()
+            view.recyclerView3.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
+
+                val mLayoutManager = GridLayoutManager(activity, 2, LinearLayoutManager.HORIZONTAL, false)
+                mLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        when (mAdapter.getItemViewType(position)) {
+                            FamousProductAdapter.TYPE_FIRST_ITEM -> return 2
+                            FamousProductAdapter.TYPE_ITEM -> return 1
+                            else -> return -1
+                        }
+                    }
+                }
+            if(it.get(0).bestRateTemp==1) {
+                view.offers_recycle.adapter = FamousProductAdapter(it)
+
+                view.offers_recycle.setLayoutManager(mLayoutManager)
+            }
+           if(it.get(0).bestRateTemp==2) {
+                view.offers_recycle.adapter=Home4BestOffecersAdapter()
+                view.offers_recycle.setLayoutManager(
+                    LinearLayoutManager(
+                        getContext(),
+                        LinearLayoutManager.HORIZONTAL,
+                        true
+                    )
+                )
+            }
+
         })
 
-        view.recyclerView3.adapter=HomeFragment4bestRateAdapter()
-        view.recyclerView3.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
-        view.offers_recycle.adapter=Home4BestOffecersAdapter()
-        view.offers_recycle.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
+
+
+
         return view
     }
     fun swipeViewPager(){

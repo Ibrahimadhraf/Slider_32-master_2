@@ -15,7 +15,8 @@ import com.example.android.slider.datalayer.usecases.SettingsUseCase
 class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):RecyclerView.Adapter<RecyclerView.ViewHolder> (){
     var view :Int=0
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): RecyclerView.ViewHolder{
-        if (setiings!!.get(3).recyclerTemp == 1) {
+
+        if (setiings!!.get(3).departmentTemp == 1) {
             view = R.layout.home_projcts4_department
             val binding: HomeProjcts4DepartmentBinding = DataBindingUtil.inflate(
                 LayoutInflater.from(parent.context),
@@ -25,7 +26,7 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
             )
             return Home_Projects4_DepatmentHolder(binding)
         }
-        if(setiings.get(3).recyclerTemp==2) {
+        if(setiings.get(3).departmentTemp==2) {
             view = R.layout.productview
 
             val binding: ProductviewBinding = DataBindingUtil.inflate(
@@ -36,7 +37,7 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
             )
             return Home_Projects4_DepatmentHolder1(binding)
         }
-        if(setiings.get(3).recyclerTemp==3){
+        if(setiings.get(3).departmentTemp==3){
             view=R.layout.home3recycle_viewlayout
 
 

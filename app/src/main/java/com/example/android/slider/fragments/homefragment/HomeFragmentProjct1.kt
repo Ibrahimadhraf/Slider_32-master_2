@@ -36,7 +36,7 @@ class HomeFragmentProjct1:Fragment(){
         })
       view.chdepatment1?.adapter= ProductViewAdapter()
        view.chdepatment1?.setLayoutManager(LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,true))
-         view.product_recyclerView?.adapter= FamousProductAdapter()
+        // view.product_recyclerView?.adapter= FamousProductAdapter()
         view.product_recyclerView.setLayoutManager(GridLayoutManager(getContext(),2))
         return view
 
