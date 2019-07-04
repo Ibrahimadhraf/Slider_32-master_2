@@ -1,4 +1,4 @@
-package com.example.android.slider.fragments.morefragment
+package com.example.android.slider.ui.offersfragment
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.android.slider.R
 
-class MoreFragment :Fragment(){
+class OffersFragment :Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view:View=inflater.inflate(R.layout.morefragment,container,false)
+        val view :View=inflater.inflate(R.layout.offersframent,container,false)
         return view
     }
 }

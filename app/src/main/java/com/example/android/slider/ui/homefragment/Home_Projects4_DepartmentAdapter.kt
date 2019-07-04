@@ -1,9 +1,8 @@
-package com.example.android.slider.adapter
+package com.example.android.slider.ui.homefragment
 
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import com.example.android.slider.R
 import com.example.android.slider.databinding.Choosedep1LayoutBinding
@@ -24,7 +23,9 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
                 parent,
                 false
             )
-            return Home_Projects4_DepatmentHolder(binding)
+            return Home_Projects4_DepatmentHolder(
+                binding
+            )
         }
         if(setiings.get(3).departmentTemp==2) {
             view = R.layout.productview
@@ -35,7 +36,9 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
                 parent,
                 false
             )
-            return Home_Projects4_DepatmentHolder1(binding)
+            return Home_Projects4_DepatmentHolder1(
+                binding
+            )
         }
         if(setiings.get(3).departmentTemp==3){
             view=R.layout.home3recycle_viewlayout
@@ -47,7 +50,9 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
             parent,
             false
         )
-        return Home_Projects4_DepatmentHolder2(binding)
+        return Home_Projects4_DepatmentHolder2(
+            binding
+        )
         }
         else{
             view=R.layout.choosedep_1_layout
@@ -58,7 +63,9 @@ class Home_Projects4_DepartmentAdapter(val setiings:List<SettingsUseCase>?):Recy
             parent,
             false
         )
-        return Home_Projects4_DepatmentHolder3(binding)
+        return Home_Projects4_DepatmentHolder3(
+            binding
+        )
     }
 
     override fun getItemCount(): Int {

@@ -1,4 +1,4 @@
-package com.example.android.slider.adapter
+package com.example.android.slider.ui.homefragment
 
 import android.content.Intent
 import android.databinding.DataBindingUtil

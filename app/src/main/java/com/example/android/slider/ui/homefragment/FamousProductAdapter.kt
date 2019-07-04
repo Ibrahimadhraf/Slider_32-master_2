@@ -1,21 +1,13 @@
-package com.example.android.slider.adapter
+package com.example.android.slider.ui.homefragment
 
 import android.support.v7.widget.RecyclerView
 import android.databinding.DataBindingUtil
-import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.android.slider.R
-import com.example.android.slider.databinding.Home4bestoffersBinding
 import com.example.android.slider.databinding.TypelayoutProduct1Binding
 import com.example.android.slider.databinding.Typeproductlayout2Binding
 import com.example.android.slider.datalayer.usecases.SettingsUseCase
-import kotlinx.android.synthetic.main.home4bestoffers.view.*
-
-
-
-
-
 
 
 class FamousProductAdapter(val settings:List<SettingsUseCase>?): RecyclerView.Adapter<RecyclerView.ViewHolder>() {

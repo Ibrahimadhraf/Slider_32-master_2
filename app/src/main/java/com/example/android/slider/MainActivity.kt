@@ -7,13 +7,10 @@ import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import com.example.android.slider.databinding.ActivityMainBinding
 import com.example.android.slider.datalayer.usecases.SettingsUseCase
-import com.example.android.slider.fragments.buygtagment.BuyFragment
-import com.example.android.slider.fragments.homefragment.HomeFragmentProjcet4
-import com.example.android.slider.fragments.homefragment.HomeFragmentProjct1
-import com.example.android.slider.fragments.homefragment.HomeFragmentProject2
-import com.example.android.slider.fragments.homefragment.HomeFragmentProject3
-import com.example.android.slider.fragments.morefragment.MoreFragment
-import com.example.android.slider.fragments.offersfragment.OffersFragment
+import com.example.android.slider.ui.buygtagment.BuyFragment
+import com.example.android.slider.ui.homefragment.HomeFragmentProjcet4
+import com.example.android.slider.ui.morefragment.MoreFragment
+import com.example.android.slider.ui.offersfragment.OffersFragment
 import com.example.android.slider.ui.splash.SplashUi
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable

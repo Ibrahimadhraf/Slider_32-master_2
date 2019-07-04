@@ -1,4 +1,4 @@
-package com.example.android.slider.fragments.homefragment
+package com.example.android.slider.ui.homefragment
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,9 +9,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.android.slider.R
-import com.example.android.slider.adapter.*
-import com.example.android.slider.datalayer.usecases.SettingsUseCase
 import com.example.android.slider.ui.settingviewmodel.SettingViewModel
 import kotlinx.android.synthetic.main.homefragmentlproject4.view.*
 import java.util.*
@@ -29,11 +26,12 @@ class HomeFragmentProjcet4 :Fragment(){
         settingsViewModel= ViewModelProviders.of(this).get(SettingViewModel::class.java)
         settingsViewModel.getSettings()
         settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
-            mAdapter=FamousProductAdapter(it)
-            view.viewpager_4.adapter=ViewPagerAdapter(it)
+            mAdapter= FamousProductAdapter(it)
+            view.viewpager_4.adapter= ViewPagerAdapter(it)
             view.indicator2.setViewPager(view.viewpager_4)
             swipeViewPager()
-             view.departmentrecycle.adapter=Home_Projects4_DepartmentAdapter(it)
+             view.departmentrecycle.adapter=
+                 Home_Projects4_DepartmentAdapter(it)
             if(it!!.get(3).departmentTemp== 1 ) {
                 view.departmentrecycle.setLayoutManager(
                     LinearLayoutManager(
@@ -66,7 +64,7 @@ class HomeFragmentProjcet4 :Fragment(){
                 )
 
             }
-            view.recyclerView3.adapter=HomeFragment4bestRateAdapter()
+            view.recyclerView3.adapter=Home4BestRateAdapter()
             view.recyclerView3.setLayoutManager(LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,true))
 
                 val mLayoutManager = GridLayoutManager(activity, 2, LinearLayoutManager.HORIZONTAL, false)
@@ -85,7 +83,7 @@ class HomeFragmentProjcet4 :Fragment(){
                 view.offers_recycle.setLayoutManager(mLayoutManager)
             }
            if(it.get(0).bestRateTemp==2) {
-                view.offers_recycle.adapter=Home4BestOffecersAdapter()
+                view.offers_recycle.adapter= Home4BestOffecersAdapter()
                 view.offers_recycle.setLayoutManager(
                     LinearLayoutManager(
                         getContext(),
