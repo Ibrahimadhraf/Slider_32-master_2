@@ -47,7 +47,7 @@ companion object{
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val  binding: SplashLayoutBinding = DataBindingUtil.setContentView(this,R.layout.splash_layout)
+        val binding: SplashLayoutBinding = DataBindingUtil.setContentView(this, R.layout.splash_layout)
         //Initialize the Handler
         mDelayHandler = Handler()
 
@@ -55,31 +55,31 @@ companion object{
         //Navigate with delay
         mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
         splashViewModel = ViewModelProviders.of(this).get(SplashViewModel::class.java)
-        settingsViewModel=ViewModelProviders.of(this).get(SettingViewModel::class.java)
+        settingsViewModel = ViewModelProviders.of(this).get(SettingViewModel::class.java)
         splashViewModel.getData()
-        splashViewModel.clientsResponseLD?.observe(this , android.arch.lifecycle.Observer {
-        binding.splash = it!!.get(0)
+        splashViewModel.clientsResponseLD?.observe(this, android.arch.lifecycle.Observer {
+            binding.splash = it!!.get(0)
 
 
         })
 
         settingsViewModel.getSettings()
-        settingsViewModel.settingsResponse?.observe(this , android.arch.lifecycle.Observer {
-            settingUseCse= it!!.get(0)
-          settigs_data=it
-           //val bundle=Bundle()
-            val data_Intent = Intent(this, MainActivity::class.java)
-           data_Intent.putExtra(SETTINGUSECASEkEY, settigs_data as Serializable)
-           // data_Intent.putExtras(bundle)
-            startActivity(data_Intent)
-            finish()
+        settingsViewModel.settingsResponse?.observe(this, android.arch.lifecycle.Observer {
+            settingUseCse = it!!.get(0)
+            settigs_data = it
+                if(settigs_data!=null) {
+                    val data_Intent = Intent(this, SliderShow::class.java)
+                    data_Intent.putExtra(SETTINGUSECASEkEY, settigs_data as Serializable)
+
+                    startActivity(data_Intent)
+                    finish()
+                }
             mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
             it.forEach {
-              //  println(it)
-              //  println(it.settings!!.data.background)
+                //  println(it)
+                //  println(it.settings!!.data.background)
             }
         })
-
     }
 
     override fun onDestroy() {

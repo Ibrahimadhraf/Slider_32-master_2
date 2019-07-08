@@ -24,10 +24,12 @@
             android:id="@+id/buttomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            app:headerLayout="@layout/nav_header"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/navbar" />
+
+            app:menu="@menu/navbar" app:layout_constraintHorizontal_bias="0.0"/>
 
     <FrameLayout
             android:id="@+id/fragment"

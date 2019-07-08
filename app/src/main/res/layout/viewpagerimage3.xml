@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="viewModel" type="com.example.android.slider.ui.UserViewModel"/>
+        <variable name="viewModel" type="com.example.android.slider.fragments.UserViewModel"/>
     </data>
 
 <android.support.constraint.ConstraintLayout
