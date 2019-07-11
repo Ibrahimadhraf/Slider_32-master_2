@@ -42,5 +42,6 @@ data class SettingData (
    val slideTemplete:Int=1,
     val departmentTemp:Int=1,
     val pestrateTemp:Int?=1,
-    val slideshow: String? = null
+    val slideshow: String? = null,
+     val borderColor:String="#FF0000"
 ):Serializable

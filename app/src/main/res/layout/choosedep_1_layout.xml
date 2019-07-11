@@ -2,11 +2,15 @@
 <layout
         xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layout">
+    <data>
+        <variable name="productInfo" type="com.example.android.slider.datalayer.usecases.SettingsUseCase"/>
+    </data>
 <android.support.constraint.ConstraintLayout
+        android:background="@{productInfo.border ==`true`? @drawable/productbackgroundwithoutborder:@drawable/productviewbackgrounf}"
+        android:elevation="@{productInfo.shadow == `true` ? @dimen/evelocheck : @dimen/evelochecknot}"
                                              android:layout_width="match_parent"
                                              android:layout_height="wrap_content"
-                                             android:layout_margin="5dp"
-                                             android:background="@drawable/productviewbackgrounf">
+                                             android:layout_margin="5dp">
     <de.hdodenhof.circleimageview.CircleImageView android:layout_width="40dp" android:layout_height="40dp"
                                                   app:layout_constraintEnd_toEndOf="parent"
                                                   android:src="@drawable/photo"

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
         xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="typelayoutInfo" type="com.example.android.slider.datalayer.usecases.SettingsUseCase"/>
+    </data>
 <android.support.constraint.ConstraintLayout
 
-        android:background="@drawable/productviewbackgrounf"
+        android:background="@{typelayoutInfo.border ==`true`?@drawable/productbackgroundwithoutborder :@drawable/productviewbackgrounf}"
+        android:elevation="@{typelayoutInfo.shadow == `true` ? @dimen/evelocheck : @dimen/evelochecknot}"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     <ImageView
@@ -22,6 +26,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:text="ملابس"
+            android:fontFamily="@font/parisienne"
+            android:textColor="@color/blue"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

@@ -71,5 +71,5 @@ dependencies {
     //pluralImage
     implementation 'com.github.jgabrielfreitas:BlurImageView:1.0.1'
     // Gradle dependency on Shimmer for Android
-    implementation 'com.facebook.shimmer:shimmer:0.4.0'
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 }

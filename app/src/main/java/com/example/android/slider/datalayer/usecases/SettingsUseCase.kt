@@ -8,6 +8,7 @@ import java.io.Serializable
 data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  {
     // var color:Int?=null
     var bestRateTemp:Int?=null
+    var borderColor:String?=null
     var settingData: SettingsModelData?=null
     var background: String? = "#fff"
     var red: String? = null
@@ -43,6 +44,7 @@ data class SettingsUseCase(val settings: SettingsModelData?=null):Serializable  
 
 settingData = settings
  slideTemp=settingData?.data?.slideTemplete
+        borderColor=settingData?.data?.borderColor
 bestRateTemp=settingData?.data?.pestrateTemp
 departmentTemp=settingData?.data?.departmentTemp
  if(settings?.type =="header"){

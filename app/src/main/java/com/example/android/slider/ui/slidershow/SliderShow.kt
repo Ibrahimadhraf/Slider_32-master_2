@@ -44,6 +44,7 @@ class SliderShow : AppCompatActivity() {
             }
             slidwershowViewPager.setCurrentItem(currentPage++, true)
         })
+        val intent: Intent? = getIntent()
         settings_data = intent?.getSerializableExtra(SplashUi.SETTINGUSECASEkEY) as List<SettingsUseCase>
         skip_text.setOnClickListener {
             val send_intent = Intent(this, MainActivity::class.java)

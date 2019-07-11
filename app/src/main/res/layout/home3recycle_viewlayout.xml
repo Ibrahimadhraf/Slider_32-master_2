@@ -2,8 +2,12 @@
 <layout
         xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/layout">
+    <data>
+        <variable name="productInfo" type="com.example.android.slider.datalayer.usecases.SettingsUseCase"/>
+    </data>
 <android.support.constraint.ConstraintLayout
-                                             android:background="@drawable/productviewbackgrounf"
+        android:background="@{productInfo.border ==`true`?@drawable/productviewbackgrounf:@drawable/productbackgroundwithoutborder}"
+        android:elevation="@{productInfo.shadow == `true` ? @dimen/evelocheck : @dimen/evelochecknot}"
                                              android:padding="8dp"
                                              android:layout_margin="8dp"
                                               android:layout_width="wrap_content"

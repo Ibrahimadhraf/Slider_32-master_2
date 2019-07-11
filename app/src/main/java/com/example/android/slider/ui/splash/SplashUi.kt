@@ -67,13 +67,13 @@ companion object{
         settingsViewModel.settingsResponse?.observe(this, android.arch.lifecycle.Observer {
             settingUseCse = it!!.get(0)
             settigs_data = it
-                if(settigs_data!=null) {
+
                     val data_Intent = Intent(this, SliderShow::class.java)
                     data_Intent.putExtra(SETTINGUSECASEkEY, settigs_data as Serializable)
 
                     startActivity(data_Intent)
                     finish()
-                }
+                
             mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
             it.forEach {
                 //  println(it)

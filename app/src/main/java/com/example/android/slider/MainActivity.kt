@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity(),Serializable {
        settings_data = intent?.getSerializableExtra(SliderShow.SETTINGUSECASEkEY) as List<SettingsUseCase>
         val bundle = Bundle()
         bundle.putSerializable(SETTINGUSECASEkEY, settings_data as Serializable)
+
          val homeFragmentProjcet4=HomeFragmentProjcet4()
         homeFragmentProjcet4.setArguments(bundle)
         val BVMenu = buttomNavigationView.getMenu()
